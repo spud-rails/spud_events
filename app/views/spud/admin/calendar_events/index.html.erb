@@ -1,0 +1,14 @@
+<%#= javascript_initializer('Wd.Admin.Events.init') %>
+<h3>Calendar Events - <%=  @calendar_date.strftime('%B %Y') %></h3>
+<%= link_to("New Calendar", new_spud_admin_calendar_path, :remote => true) %>
+<%= link_to("New Event", new_spud_admin_calendar_event_path) %>
+
+<div id="wd_admin_calendar">
+  <%= render :partial => 'calendar' %>
+</div>
+
+<aside>
+  <ul id="wd_admin_calendar_legend">
+		<%= render :partial => 'spud/admin/calendars/calendar', :collection => @calendars %>
+  </ul>
+</aside>

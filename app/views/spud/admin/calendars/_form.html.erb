@@ -1,0 +1,31 @@
+<%= form_for [:spud_admin, @calendar], :remote => true do |f| %>
+
+  <% if @calendar.errors.any? %>
+    <div class="wd_form_error_list">
+      <h4><%= pluralize(@calendar.errors.count, "error") %> prohibited you from saving this event:</h4>
+      <ul>
+      <% @calendar.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+	<div class="wd_form_columns_equal">
+
+  <section>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </section>
+
+  <section>
+    <%= f.label :color %>
+    <%= f.hidden_field :color %>
+    <div class="wd_admin_color_picker"></div>
+  </section>
+
+  <section>
+    <%= f.submit "Save" %>
+  </section>
+
+<% end %>

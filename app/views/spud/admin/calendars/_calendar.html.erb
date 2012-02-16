@@ -1,0 +1,10 @@
+<li id="wd_calendar_legend_<%= calendar.id %>">
+  <!--
+  <%= check_box_tag "calendar_legend_#{calendar.id}", nil, true, :class => 'wd_calendar_legend_select' %>
+  -->
+  <%= content_tag :span, calendar.title, :style => "background-color: \##{calendar.color}"%>
+  <div class="wd_admin_calendar_actions">
+    <%= link_to 'edit', edit_spud_admin_calendar_path(calendar), :remote => true %>
+    <%= link_to 'delete', [:spud_admin, calendar], :remote => true, :confirm => 'Are you sure?', :method => :delete %>
+  </div>
+</li>

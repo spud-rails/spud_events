@@ -1,0 +1,14 @@
+<p><%= next_path(@calendar_date) %></p>
+<p><%= previous_path(@calendar_date) %></p>
+
+<%= calendar_for @calendar_events, :year => @calendar_date.year, :month => @calendar_date.month do |t| %>
+  <%= raw t.head('S', 'M', 'T', 'W', 'T', 'F', 'S') %>
+  <%= t.day do |day, tasks| %>
+    <div class="wd_admin_calendar_date_container">
+    <%= content_tag :span, day.day, :class => (tasks.count > 0 ? "wd_admin_calendar_date wd_admin_calendar_date_active" : "wd_admin_calendar_date") %>
+    <% tasks.each do |task| %>
+      <%= link_to task.title[0,25], edit_spud_admin_calendar_event_path(task.id), :class => "wd_admin_calendar_event_marker wd_calendar_event_#{task.calendar_id}", :style => "background-color: \##{task.calendar.color}" %>
+    <% end %>
+    </div>
+  <% end %>
+<% end %>

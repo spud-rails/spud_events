@@ -1,0 +1,42 @@
+<%= form_for [:admin, @calendar_event] do |f| %>
+
+  <% if @calendar_event.errors.any? %>
+    <div class="wd_form_error_list">
+      <h4><%= pluralize(@calendar_event.errors.count, "error") %> prohibited you from saving this event:</h4>
+      <ul>
+      <% @calendar_event.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <section class="wd_form_row">
+		
+		<div>
+	    <%= f.label :title %>
+	    <%= f.text_field :title %>
+		</div>
+
+		<div>
+    	<%= f.label :date %>
+    	<%= f.text_field :date, :value => @calendar_event.date.strftime("%Y-%m-%d"), :class => 'wd_admin_date_input' %>
+		</div>
+
+		<div>
+    	<%= f.label :calender_id %>
+    	<%= f.select(:calendar_id, options_from_collection_for_select(Calendar.all, :id, :title, @calendar_event.calendar_id)) %>
+		</div>
+		
+  </section>
+
+  <section>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </section>
+
+  <section>
+    <%= f.submit "Save", :class => 'wymupdate' %>
+  </section>
+
+<% end %>

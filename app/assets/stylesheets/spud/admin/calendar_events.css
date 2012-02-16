@@ -1,0 +1,106 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+
+#wd_admin_calendar{
+  width: 700px;
+  padding-bottom: 50px;
+  position: relative;
+  float: left;
+}
+#wd_admin_calendar p:first-child{
+  float: right;
+}
+#wd_admin_calendar table{
+  margin: 15px 0 0;
+}
+#wd_admin_calendar th{
+  text-align: center;
+}
+#wd_admin_calendar td{
+  border: 1px solid #d9d9d9;;
+  position: relative;
+  height: 90px;
+  padding: 0;
+  vertical-align: top;
+  width: 98px;
+}
+.wd_admin_calendar_date_container{
+  padding: 18px 5px 0;
+  position: relative;
+}
+span.wd_admin_calendar_date{
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  font-size: 11px;
+  line-height: 11px;
+}
+a.wd_admin_calendar_event_marker{
+  color: black;
+  font-size: 11px;
+  padding: 0 3px;
+  margin: 0 0 3px 0;
+  line-height: 13px;
+  display: block;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  text-decoration: none;
+}
+span.wd_admin_calendar_event_marker:last-child{
+  color: #191919;
+  margin: 0;
+}
+
+/* Event List
+----------------------- */
+aside{
+  margin: 45px 0 0 725px
+}
+
+/*  Calendar Legend
+----------------------- */
+#wd_admin_calendar_legend{
+  list-style: none;
+  border: 1px solid #d9d9d9;;
+}
+#wd_admin_calendar_legend li{
+  display: block;
+  padding: 5px 5px 5px 3px;
+  -webkit-transition: background 0.15s ease-in;
+}
+#wd_admin_calendar_legend li:hover{
+  background: #F0F0F0;
+}
+#wd_admin_calendar_legend li{
+  border-bottom: 1px solid #d9d9d9;
+}
+#wd_admin_calendar_legend li:last-child{
+  border: none;
+}
+.wd_admin_calendar_actions{
+  text-align: right;
+}
+.wd_admin_calendar_actions a{
+  color: gray;
+}
+#wd_admin_calendar_legend  span{
+  display: inline-block;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;  
+  padding: 2px 8px;
+  margin: 8px 0 0 8px;
+}
+
+/* Calendar Color Picker
+----------------------- */
+.wd_admin_color_picker{
+  height: 28px;
+  width: 28px;
+  display: block;
+  background-image: url('/assets/colorpicker/images/select2.png');
+  background-position: 50% 50%;
+}

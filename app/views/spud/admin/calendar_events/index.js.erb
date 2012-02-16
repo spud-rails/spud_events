@@ -1,0 +1,2 @@
+$('#wd_admin_nav h3').text('Calendar Events - <%= @calendar_date.strftime('%B %Y') %>')
+$('#wd_admin_calendar').html("<%= escape_javascript(render :partial => "calendar") %>");
