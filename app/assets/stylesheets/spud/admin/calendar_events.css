@@ -1,24 +1,62 @@
-/*
-  Place all the styles related to the matching controller here.
-  They will automatically be included in application.css.
-*/
+/* Tables
+----------------------- */
+#f table{
+  border-collapse: collapse;
+  font-size: 13px;
+  border: 1px solid #d9d9d9;;
+  width: 100%;
+}
+#spud_events th{
+  background-image: -webkit-gradient(
+      linear,
+      left bottom,
+      left top,
+      color-stop(0, rgb(244,244,244)),
+      color-stop(1, rgb(255,255,255))
+  );
+  background-image: -moz-linear-gradient(
+      center bottom,
+      rgb(244,244,244) 6%,
+      rgb(255,255,255) 53%
+  );
+}
+#spud_events td, #spud_events th{
+  padding: 0 10px;
+  line-height: 30px;
+  text-align: left;
+  vertical-align: middle;
+}
+#spud_events td img, #spud_events  th img{
+  display: block;
+}
+#spud_events tbody tr{
+  border-top: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9;
+  -webkit-transition:background 0.15s ease-in;
+  -moz-transition:background 0.15s ease-in;
+}
+#spud_events tbody tr:hover{
+  background: #f0f0f0;
+  -webkit-transition:background 0.15s ease-in;
+  -moz-transition:background 0.15s ease-in;
+}
 
-#wd_admin_calendar{
+#spud_events_admin_calendar{
   width: 700px;
   padding-bottom: 50px;
   position: relative;
   float: left;
 }
-#wd_admin_calendar p:first-child{
+#spud_events_admin_calendar p:first-child{
   float: right;
 }
-#wd_admin_calendar table{
+#spud_events_admin_calendar table{
   margin: 15px 0 0;
 }
-#wd_admin_calendar th{
+#spud_events_admin_calendar th{
   text-align: center;
 }
-#wd_admin_calendar td{
+#spud_events_admin_calendar td{
   border: 1px solid #d9d9d9;;
   position: relative;
   height: 90px;
@@ -26,18 +64,18 @@
   vertical-align: top;
   width: 98px;
 }
-.wd_admin_calendar_date_container{
+.spud_events_admin_calendar_date_container{
   padding: 18px 5px 0;
   position: relative;
 }
-span.wd_admin_calendar_date{
+span.spud_events_admin_calendar_date{
   position: absolute;
   top: 3px;
   right: 3px;
   font-size: 11px;
   line-height: 11px;
 }
-a.wd_admin_calendar_event_marker{
+a.spud_events_admin_calendar_event_marker{
   color: black;
   font-size: 11px;
   padding: 0 3px;
@@ -49,7 +87,7 @@ a.wd_admin_calendar_event_marker{
   border-radius: 3px;
   text-decoration: none;
 }
-span.wd_admin_calendar_event_marker:last-child{
+span.spud_events_admin_calendar_event_marker:last-child{
   color: #191919;
   margin: 0;
 }
@@ -62,31 +100,32 @@ aside{
 
 /*  Calendar Legend
 ----------------------- */
-#wd_admin_calendar_legend{
+#spud_events_admin_calendar_legend{
   list-style: none;
-  border: 1px solid #d9d9d9;;
+  border: 1px solid #d9d9d9;
+  padding: 0;
 }
-#wd_admin_calendar_legend li{
+#spud_events_admin_calendar_legend li{
   display: block;
   padding: 5px 5px 5px 3px;
   -webkit-transition: background 0.15s ease-in;
 }
-#wd_admin_calendar_legend li:hover{
+#spud_events_admin_calendar_legend li:hover{
   background: #F0F0F0;
 }
-#wd_admin_calendar_legend li{
+#spud_events_admin_calendar_legend li{
   border-bottom: 1px solid #d9d9d9;
 }
-#wd_admin_calendar_legend li:last-child{
+#spud_events_admin_calendar_legend li:last-child{
   border: none;
 }
-.wd_admin_calendar_actions{
+.spud_events_admin_calendar_actions{
   text-align: right;
 }
-.wd_admin_calendar_actions a{
+.spud_events_admin_calendar_actions a{
   color: gray;
 }
-#wd_admin_calendar_legend  span{
+#spud_events_admin_calendar_legend  span{
   display: inline-block;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -97,7 +136,7 @@ aside{
 
 /* Calendar Color Picker
 ----------------------- */
-.wd_admin_color_picker{
+.spud_events_admin_color_picker{
   height: 28px;
   width: 28px;
   display: block;

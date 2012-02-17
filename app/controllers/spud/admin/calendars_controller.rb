@@ -12,9 +12,9 @@ class Spud::Admin::CalendarsController < Spud::Admin::ApplicationController
   end
 
   def create
-    @calendar = SpudCalendar.new(params[:calendar])
+    @calendar = SpudCalendar.new(params[:spud_calendar])
     if @calendar.save
-      render :action => "show"
+      redirect_to spud_admin_calendar_events_path
     else
       render :action => "new"
     end
@@ -27,9 +27,9 @@ class Spud::Admin::CalendarsController < Spud::Admin::ApplicationController
 
   def update
     @calendar = SpudCalendar.find(params[:id])
-    if @calendar.update_attributes(params[:calendar])
+    if @calendar.update_attributes(params[:spud_calendar])
       flash[:notice] = 'Calendar was successfully updated.'
-      render :action => "show"
+      redirect_to spud_admin_calendar_events_path
     else
       render :action => "edit"
     end
@@ -38,7 +38,7 @@ class Spud::Admin::CalendarsController < Spud::Admin::ApplicationController
   def destroy
     @calendar = SpudCalendar.find(params[:id])
     @calendar.events.each do |event|
-      event.update_attribute(:calendar_id, 0)
+      event.update_attribute(:spud_calendar_id, 0)
     end
     flash[:notice] = 'Calendar was successfully deleted.' if @calendar.destroy
     respond_with(@calendar)

@@ -1,4 +1,4 @@
-<%= form_for [:admin, @calendar_event] do |f| %>
+<%= form_for [:spud_admin, @calendar_event] do |f| %>
 
   <% if @calendar_event.errors.any? %>
     <div class="wd_form_error_list">
@@ -11,32 +11,30 @@
     </div>
   <% end %>
 
-  <section class="wd_form_row">
-		
+  <section>
+		<div>
+    	<%= f.label :spud_calender_id, "Calendar" %>
+    	<%= f.select(:spud_calendar_id, options_from_collection_for_select(SpudCalendar.all, :id, :title, @calendar_event.spud_calendar_id)) %>
+		</div>
 		<div>
 	    <%= f.label :title %>
 	    <%= f.text_field :title %>
 		</div>
-
-		<div>
-    	<%= f.label :date %>
-    	<%= f.text_field :date, :value => @calendar_event.date.strftime("%Y-%m-%d"), :class => 'wd_admin_date_input' %>
-		</div>
-
-		<div>
-    	<%= f.label :calender_id %>
-    	<%= f.select(:calendar_id, options_from_collection_for_select(Calendar.all, :id, :title, @calendar_event.calendar_id)) %>
-		</div>
-		
+    <div>
+      <%= f.label :start_at, "Starts" %>
+      <%= f.datetime_select(:start_at, :ampm => true, :default =>  DateTime.now, :minute_step => 5)%>
+    </div>
+    <div>
+      <%= f.label :end_at, "Ends" %>
+      <%= f.datetime_select(:end_at, :ampm => true, :default =>  DateTime.now, :minute_step => 5)%>
+    </div>
   </section>
-
   <section>
     <%= f.label :description %>
     <%= f.text_area :description %>
   </section>
-
   <section>
     <%= f.submit "Save", :class => 'wymupdate' %>
   </section>
-
 <% end %>
+<br class="clear" />
