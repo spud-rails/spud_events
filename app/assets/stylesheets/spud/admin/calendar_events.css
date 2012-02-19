@@ -1,12 +1,12 @@
 /* Tables
 ----------------------- */
-#f table{
+#spud_events_admin_calendar table{
   border-collapse: collapse;
   font-size: 13px;
   border: 1px solid #d9d9d9;;
   width: 100%;
 }
-#spud_events th{
+#spud_events_admin_calendar th{
   background-image: -webkit-gradient(
       linear,
       left bottom,
@@ -20,22 +20,22 @@
       rgb(255,255,255) 53%
   );
 }
-#spud_events td, #spud_events th{
+#spud_events_admin_calendar td, #spud_events th{
   padding: 0 10px;
   line-height: 30px;
   text-align: left;
   vertical-align: middle;
 }
-#spud_events td img, #spud_events  th img{
+#spud_events_admin_calendar td img, #spud_events  th img{
   display: block;
 }
-#spud_events tbody tr{
+#spud_events_admin_calendar tbody tr{
   border-top: 1px solid #d9d9d9;
   border-bottom: 1px solid #d9d9d9;
   -webkit-transition:background 0.15s ease-in;
   -moz-transition:background 0.15s ease-in;
 }
-#spud_events tbody tr:hover{
+#spud_events_admin_calendar tbody tr:hover{
   background: #f0f0f0;
   -webkit-transition:background 0.15s ease-in;
   -moz-transition:background 0.15s ease-in;
@@ -100,32 +100,32 @@ aside{
 
 /*  Calendar Legend
 ----------------------- */
-#spud_events_admin_calendar_legend{
+#spud_events_admin_calendar_legend {
   list-style: none;
   border: 1px solid #d9d9d9;
   padding: 0;
 }
-#spud_events_admin_calendar_legend li{
+#spud_events_admin_calendar_legend li {
   display: block;
   padding: 5px 5px 5px 3px;
   -webkit-transition: background 0.15s ease-in;
 }
-#spud_events_admin_calendar_legend li:hover{
+#spud_events_admin_calendar_legend li:hover {
   background: #F0F0F0;
 }
-#spud_events_admin_calendar_legend li{
+#spud_events_admin_calendar_legend li {
   border-bottom: 1px solid #d9d9d9;
 }
-#spud_events_admin_calendar_legend li:last-child{
+#spud_events_admin_calendar_legend li:last-child {
   border: none;
 }
-.spud_events_admin_calendar_actions{
+.spud_events_admin_calendar_actions {
   text-align: right;
 }
-.spud_events_admin_calendar_actions a{
+.spud_events_admin_calendar_actions a {
   color: gray;
 }
-#spud_events_admin_calendar_legend  span{
+#spud_events_admin_calendar_legend  span {
   display: inline-block;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -136,7 +136,7 @@ aside{
 
 /* Calendar Color Picker
 ----------------------- */
-.spud_events_admin_color_picker{
+.spud_events_admin_color_picker {
   height: 28px;
   width: 28px;
   display: block;

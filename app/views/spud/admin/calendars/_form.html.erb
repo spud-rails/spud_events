@@ -1,24 +1,15 @@
 <%= form_for [:spud_admin, @calendar] do |f| %>
-    <% if @calendar.errors.any? %>
-        <div class="wd_form_error_list">
-            <h4><%= pluralize(@calendar.errors.count, "error") %> prohibited you from saving this event:</h4>
-            <ul>
-                <% @calendar.errors.full_messages.each do |msg| %>
-                    <li><%= msg %></li>
-                <% end %>
-            </ul>
-        </div>
-    <% end %>
-    <section>
+    <%= error_messages_for(f.object) %>
+    <p>
         <%= f.label :title %>
         <%= f.text_field :title %>
-    </section>
-    <section>
+    </p>
+    <p>
         <%= f.label :color %>
         <%= f.hidden_field :color %>
-        <div class="wd_admin_color_picker"></div>
-    </section>
-    <section>
+        <div class="spud_events_admin_color_picker"></div>
+    </p>
+    <p>
         <%= f.submit "Save" %>
-    </section>
+    </p>
 <% end %>

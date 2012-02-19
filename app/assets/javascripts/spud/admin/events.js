@@ -10,10 +10,11 @@ Spud.Admin.Events = new function(){
   self.init = function(){
     // Wd.Admin.tinyMce();
     self.configureColorPicker();
+    self.attachCalendarDeleteFX();
   };
   
   self.configureColorPicker = function(){
-    var $colorPickers = $('.wd_admin_color_picker'),
+    var $colorPickers = $('.spud_events_admin_color_picker'),
         $calendarColor = $('#spud_calendar_color');
 
     if($colorPickers.size() > 0) {
@@ -39,6 +40,12 @@ Spud.Admin.Events = new function(){
       });
     }
   };
+  
+  self.attachCalendarDeleteFX = function() {
+    $('.js-spud-calendar-delete-action').live('ajax:success', function() {
+      $(this).closest('.spud_events_admin_calendar_legend_item').fadeOut(500, function(){ $(this).remove() });
+    });
+  }
 };
 
 $(function() {

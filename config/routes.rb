@@ -4,7 +4,7 @@ Rails.application.routes.draw do
       # Events
       resources :calendar_events, :except => [:show, :index], :path => 'events', :as => "spud_calendar_events"
       resources :calendars, :except => [:show, :index], :path => 'calendars', :as => "spud_calendars"
-      match 'events(/:month(/:year(/:calendar)))' => "calendar_events#index", :as => "calendar_events"
+      match 'events(/:month(/:year(/:calendar)))' => "calendar_events#index", :as => "list_spud_calendar_events"
 		end
 	end
   
