@@ -23,17 +23,16 @@ Installation/Usage
 Configruations
 --------------
 
-* Set the layout for the calendar pages (Defualt is layouts/spud/calendar)
-
+* Set the layout for the calendar pages (Defualt is layouts/spud/calendar) <pre><code>
     Spud::Events.configure do |config|
       config.calendar_layout = 'application'
     end
-    
+</code></pre>
 * Override the default calendar views by placing the corresponding views in the ```calendars``` and ```calendar_events``` view folders.
-* Include the default calendar CSS by adding the following to your ```application.css``` file
-
+* Include the default calendar CSS by adding the following to your ```application.css``` file <pre><code>
     /*
     ...
     *= require spud/events
     */
+</code></pre>
     
