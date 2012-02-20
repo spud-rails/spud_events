@@ -1,4 +1,7 @@
 class CalendarsController < ApplicationController
+  
+  layout 'spud/calendar'
+  
   def show
     if params[:month]
       year = params[:year] ? params[:year] : Time.new.year

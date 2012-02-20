@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Spud Events</title>
+      <%= stylesheet_link_tag "spud/events" %>
+      <%= csrf_meta_tags %>
+      <%= yield :head %>
+    </head>
+    <body>
+        <div id="content">
+            <%= content_for?(:content) ? yield(:content) : yield %>
+        </div>
+        <div id="javascripts" style="display:none;">
+            <%= javascript_include_tag "spud/events" %>
+            <%= content_for(:javascripts) %>
+        </div>
+    </body
+</html>

@@ -2,7 +2,3 @@
 <div id="spud_events_calendar">
     <%= render :partial => 'calendar', :locals => {:date => @calendar_date} %>
 </div>
-<nav id="spud_events_calendar_nav">
-  <%= link_to_previous_calendar_month(@calendar_date, {:controller => 'spud/events/calendars', :action => :show}) %>
-  <%= link_to_next_calendar_month(@calendar_date, {:controller => 'spud/events/calendars', :action => :show}) %>
-</nav>
