@@ -28,7 +28,6 @@ Configruations
     Spud::Events.configure do |config|
       config.calendar_layout = 'application'
     end
-
 ```
 * Override the default calendar views by placing the corresponding views in the ```calendars``` and ```calendar_events``` view folders.
 * Include the default calendar CSS by adding the following to your ```application.css``` file ```
@@ -37,5 +36,4 @@ Configruations
     ...
     *= require spud/events
     */
-    
 ```
