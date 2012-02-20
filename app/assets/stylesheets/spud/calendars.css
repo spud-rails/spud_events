@@ -1,0 +1,139 @@
+/* Calendar Tables
+----------------------- */
+#spud_events_admin_calendar table,
+#spud_events_calendar table {
+  border-collapse: collapse;
+  font-size: 13px;
+  border: 1px solid #d9d9d9;;
+  width: 100%;
+}
+#spud_events_admin_calendar th,
+#spud_events_calendar th {
+  background-image: -webkit-gradient(
+      linear,
+      left bottom,
+      left top,
+      color-stop(0, rgb(244,244,244)),
+      color-stop(1, rgb(255,255,255))
+  );
+  background-image: -moz-linear-gradient(
+      center bottom,
+      rgb(244,244,244) 6%,
+      rgb(255,255,255) 53%
+  );
+}
+#spud_events_admin_calendar td, #spud_events_admin_calendar th,
+#spud_events_calendar td, #spud_events_calendar th {
+  padding: 0 10px;
+  line-height: 30px;
+  text-align: left;
+  vertical-align: middle;
+}
+#spud_events_admin_calendar td img, #spud_events_admin_calendar th img,
+#spud_events_calendar td img, #spud_events_calendar th img {
+  display: block;
+}
+#spud_events_admin_calendar tbody tr,
+#spud_events_calendar tbody tr {
+  border-top: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9;
+  -webkit-transition:background 0.15s ease-in;
+  -moz-transition:background 0.15s ease-in;
+}
+#spud_events_admin_calendar tbody tr:hover,
+#spud_events_calendar tbody tr:hover {
+  background: #f0f0f0;
+  -webkit-transition:background 0.15s ease-in;
+  -moz-transition:background 0.15s ease-in;
+}
+
+#spud_events_admin_calendar,
+#spud_events_calendar {
+  width: 700px;
+  padding-bottom: 50px;
+  position: relative;
+  float: left;
+}
+#spud_events_calendar {
+  width: auto;
+}
+#spud_events_admin_calendar p:first-child,
+#spud_events_calendar p:first-child {
+  float: right;
+}
+#spud_events_admin_calendar table,
+#spud_events_calendar table {
+  margin: 15px 0 0;
+}
+#spud_events_admin_calendar th,
+#spud_events_calendar th {
+  text-align: center;
+}
+#spud_events_admin_calendar td,
+#spud_events_calendar td {
+  border: 1px solid #d9d9d9;;
+  position: relative;
+  height: 90px;
+  padding: 0;
+  vertical-align: top;
+  width: 98px;
+}
+.spud_events_admin_calendar_date_container,
+.spud_events_calendar_date_container {
+  display: block;
+  padding: 18px 5px 0;
+  position: relative;
+}
+span.spud_events_admin_calendar_date,
+span.spud_events_calendar_date {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  font-size: 11px;
+  line-height: 11px;
+}
+
+/*  Calendar Legend
+----------------------- */
+#spud_events_admin_calendar_legend,
+#spud_events_calendar_legend {
+  list-style: none;
+  border: 1px solid #d9d9d9;
+  padding: 0;
+  margin: 45px 0 0 725px;
+}
+#spud_events_admin_calendar_legend li,
+#spud_events_calendar_legend li {
+  display: block;
+  padding: 5px 5px 5px 3px;
+  -webkit-transition: background 0.15s ease-in;
+}
+#spud_events_admin_calendar_legend li:hover,
+#spud_events_calendar_legend li:hover {
+  background: #F0F0F0;
+}
+#spud_events_admin_calendar_legend li,
+#spud_events_calendar_legend li {
+  border-bottom: 1px solid #d9d9d9;
+}
+#spud_events_admin_calendar_legend li:last-child,
+#spud_events_calendar_legend li:last-child {
+  border: none;
+}
+.spud_events_admin_calendar_actions,
+.spud_events_calendar_actions {
+  text-align: right;
+}
+.spud_events_admin_calendar_actions a,
+.spud_events_calendar_actions a {
+  color: gray;
+}
+#spud_events_admin_calendar_legend  span,
+#spud_events_calendar_legend  span {
+  display: inline-block;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;  
+  padding: 2px 8px;
+  margin: 8px 0 0 8px;
+}

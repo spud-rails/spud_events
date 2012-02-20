@@ -1,0 +1,4 @@
+<%= form_tag calendar_path(@calendar_date.strftime("%b").downcase, @calendar_date.strftime("%Y")), :method => 'post', :id => "spud_events_calendar_for" do %>
+  <%= select_tag 'calendar', get_calendar_options('All Calendars') %>
+  <%= submit_tag 'Go' %>
+<% end %>

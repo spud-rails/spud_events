@@ -1,0 +1,18 @@
+a.spud_events_admin_calendar_event_marker,
+a.spud_events_calendar_event_marker {
+  color: black;
+  font-size: 11px;
+  padding: 0 3px;
+  margin: 0 0 3px 0;
+  line-height: 13px;
+  display: block;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  text-decoration: none;
+  }
+span.spud_events_admin_calendar_event_marker:last-child,
+span.spud_events_calendar_event_marker:last-child {
+  color: #191919;
+  margin: 0;
+  }

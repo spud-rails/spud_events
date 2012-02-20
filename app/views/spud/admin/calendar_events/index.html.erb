@@ -6,9 +6,7 @@
 <div id="spud_events_admin_calendar">
   <%= render :partial => 'calendar' %>
 </div>
-<aside>
-  <ul id="spud_events_admin_calendar_legend">
+<ul id="spud_events_admin_calendar_legend">
     <li><%= link_to("New Calendar", new_spud_admin_spud_calendar_path) %></li>
-	<%= render :partial => 'spud/admin/calendars/calendar_legend', :collection => @calendars, :as => :calendar %>
-  </ul>
-</aside>
+    <%= render :partial => 'spud/admin/calendars/calendar_legend', :collection => @calendars, :as => :calendar %>
+</ul>

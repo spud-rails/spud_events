@@ -1,5 +1,16 @@
 /* ...
-*= require spud/admin/calendars
-*= require spud/admin/calendar_events
+*= require spud/calendars
+*= require spud/calendar_events
 *= require colorpicker/colorpicker
+*= require_self
 */
+
+/* Calendar Color Picker
+----------------------- */
+.spud_events_admin_color_picker {
+  height: 28px;
+  width: 28px;
+  display: block;
+  background-image: url('/assets/colorpicker/images/select2.png');
+  background-position: 50% 50%;
+}

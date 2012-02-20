@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 	end
   
   # Calendar
-  match 'calendar(/:month(/:year(/:calendar)))' => "calendar#show", :as => "calendar"
-  match 'calendar_event/:id' => "calendar#event", :as => "event"
+  match 'calendar(/:month(/:year(/:calendar)))' => "spud/events/calendars#show", :as => "calendar"
+  match 'calendar_event/:id' => "spud/events/calendar_events#show", :as => "event"
 end
 

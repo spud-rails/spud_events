@@ -1,0 +1,11 @@
+<div class="spud_events_calendar">
+  <div>
+  <h2><%= date.strftime("%B %Y") %></h2>
+  <% build_calendar_for @events, :year => date.year, :month => date.month do |t| %>
+    <%= raw t.head('S', 'M', 'T', 'W', 'T', 'F', 'S') %>
+    <% t.day do |day, tasks| %>
+      <%= content_tag :span, day.day, :class => (tasks.count > 0 ? "spud_events_calendar_date spud_events_calendar_date_active" : "spud_events_calendar_date") %>
+    <% end %>
+  <% end %>
+  </div>
+</div>
