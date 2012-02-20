@@ -8,13 +8,13 @@ Installation/Usage
 
 1. Add the following to your Gemfile
 
-    gem 'spud_core'
-    gem 'spud_events', :git => "git://github.com/davydotcom/spud_events.git"
+        gem 'spud_core'
+        gem 'spud_events', :git => "git://github.com/davydotcom/spud_events.git"
 
 2. Run ```bundle install```
 3. Copy the database migrations in to your rails project
 
-    rake railties:install:migrations
+    ```rake railties:install:migrations```
 
 4. Run the database migrations ```rake db:migrate```
 5. The defualt URL for the calendar page is ```/calendar```
