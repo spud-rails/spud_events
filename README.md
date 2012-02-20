@@ -14,8 +14,7 @@ Installation/Usage
 2. Run ```bundle install```
 3. Copy the database migrations in to your rails project
 
-    rake spud_core:install:migrations
-    rake spud_events:install:migrations
+    rake railties:install:migrations
 
 4. Run the database migrations ```rake db:migrate```
 5. The defualt URL for the calendar page is ```/calendar```
