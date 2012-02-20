@@ -14,7 +14,7 @@ Installation/Usage
 2. Run ```bundle install```
 3. Copy the database migrations in to your rails project
 
-    ```rake railties:install:migrations```
+        rake railties:install:migrations
 
 4. Run the database migrations ```rake db:migrate```
 5. The defualt URL for the calendar page is ```/calendar```
@@ -22,14 +22,17 @@ Installation/Usage
 Configruations
 --------------
 
-* Set the layout for the calendar pages (Defualt is layouts/spud/calendar) <pre><code>Spud::Events.configure do |config|
-      config.calendar_layout = 'application'
-    end
-</code></pre>
+* Set the layout for the calendar pages (Defualt is layouts/spud/calendar)
+
+        Spud::Events.configure do |config|
+          config.calendar_layout = 'application'
+        end
+
 * Override the default calendar views by placing the corresponding views in the ```calendars``` and ```calendar_events``` view folders.
-* Include the default calendar CSS by adding the following to your ```application.css``` file <pre><code>/*
-    ...
-    *= require spud/events
-    */
-</code></pre>
+* Include the default calendar CSS by adding the following to your ```application.css``` file 
+
+        /*
+        ...
+        *= require spud/events
+        */
     
