@@ -1,6 +1,6 @@
 class CalendarEventsController < ApplicationController
   
-  layout 'spud/calendar'
+  layout Spud::Events.config.calendar_layout || 'spud/calendar'
   
 	def show
 		@event = SpudCalendarEvent.find(params[:id])

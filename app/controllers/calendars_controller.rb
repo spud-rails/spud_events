@@ -1,6 +1,6 @@
 class CalendarsController < ApplicationController
   
-  layout 'spud/calendar'
+  layout Spud::Events.config.calendar_layout || 'spud/calendar'
   
   def show
     if params[:month]
