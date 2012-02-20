@@ -8,7 +8,9 @@ Gem::Specification.new do |s|
   s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
+  s.authors = ["Dustin DeYoung"]
   s.date = "2012-02-20"
+  s.email = "dustin@westlakedesign.com"
   s.files = [
     "app/assets/images/spud/admin/events_thumb.png",
     "app/assets/javascripts/calendar_events.js",
@@ -58,6 +60,7 @@ Gem::Specification.new do |s|
     "app/helpers/spud/admin/calendars_helper.rb",
     "app/models/spud_calendar.rb",
     "app/models/spud_calendar_event.rb",
+    "app/views/calendar_events/show.html.erb",
     "app/views/calendars/_calendar.html.erb",
     "app/views/calendars/_calendar_options.html.erb",
     "app/views/calendars/show.html.erb",
