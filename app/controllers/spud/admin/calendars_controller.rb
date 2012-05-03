@@ -16,7 +16,7 @@ class Spud::Admin::CalendarsController < Spud::Admin::ApplicationController
   def create
     @calendar = SpudCalendar.new(params[:spud_calendar])
     if @calendar.save
-      redirect_to spud_admin_calendar_events_path
+      redirect_to spud_admin_list_spud_calendar_events_path
     else
       render :action => "new"
     end
@@ -32,7 +32,7 @@ class Spud::Admin::CalendarsController < Spud::Admin::ApplicationController
     @calendar = SpudCalendar.find(params[:id])
     if @calendar.update_attributes(params[:spud_calendar])
       flash[:notice] = 'Calendar was successfully updated.'
-      redirect_to spud_admin_calendar_events_path
+      redirect_to spud_admin_list_spud_calendar_events_path
     else
       render :action => "edit"
     end

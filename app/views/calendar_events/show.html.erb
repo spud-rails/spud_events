@@ -1,3 +1,5 @@
 <h2><%= @event.title %></h2>
-<p class="date"><%= @event.date.strftime('%B %d, %Y') %></p>
+<h4 class="spud_calendar_event_date">
+  <%= @event.start_at.strftime('%B %d, %Y') %>
+</h4>
 <p><%= @event.description %></p>
