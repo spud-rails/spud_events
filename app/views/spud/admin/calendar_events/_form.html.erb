@@ -1,4 +1,4 @@
-<%= form_for [:spud_admin, @calendar_event] do |f| %>
+<%= form_for @calendar_event, :url => path do |f| %>
   <%= error_messages_for(f.object) %>
   <p>
     <%= f.label :spud_calender_id, "Calendar" %>
@@ -23,8 +23,10 @@
   <p>
     <%= f.submit "Save", :class => 'wymupdate' %>
   </p>
+  <% if !@calendar_event.new_record? %>
   <p>
-    <%= button_to "Delete", spud_admin_spud_calendar_event_path(f.object.id), :method=>:delete, :confirm=>"Are you sure you want delete this event?" %>
+    <%= link_to "Delete", spud_admin_calendar_event_path(@calendar_event), :method=>:delete, :confirm=>"Are you sure you want delete this event?" %>
   </p>
+  <% end %>
 <% end %>
 <br class="clear" />

@@ -1,4 +1,4 @@
-<%= form_for [:spud_admin, @calendar] do |f| %>
+<%= form_for @calendar, :url => (@calendar.new_record? ? spud_admin_calendars_path : edit_spud_admin_calendar_path(@calendar)) do |f| %>
     <%= error_messages_for(f.object) %>
     <p>
         <%= f.label :title %>

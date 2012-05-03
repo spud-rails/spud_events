@@ -1,12 +1,12 @@
 <%#= javascript_initializer('Wd.Admin.Events.init') %>
 <h3>Calendar Events - <%=  @calendar_date.strftime('%B %Y') %></h3>
 <p>
-    <%= link_to("New Event", new_spud_admin_spud_calendar_event_path) %>
+    <%= link_to("New Event", new_spud_admin_calendar_event_path) %>
 </p>
 <div id="spud_events_admin_calendar">
   <%= render :partial => 'calendar' %>
 </div>
 <ul id="spud_events_admin_calendar_legend">
     <%= render :partial => 'spud/admin/calendars/calendar_legend', :collection => @calendars, :as => :calendar %>
-    <li><%= link_to("New Calendar", new_spud_admin_spud_calendar_path) %></li>
+    <li><%= link_to("New Calendar", new_spud_admin_calendar_path) %></li>
 </ul>

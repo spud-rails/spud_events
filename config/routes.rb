@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
+
 	namespace :spud do
 		namespace :admin do
       # Events
-      resources :calendar_events, :except => [:show, :index], :path => 'events', :as => "spud_calendar_events"
-      resources :calendars, :except => [:show, :index], :path => 'calendars', :as => "spud_calendars"
+      resources :calendar_events, :except => [:index]
+      resources :calendars, :except => [:index]
       match 'events(/:month(/:year(/:calendar)))' => "calendar_events#index", :as => "list_spud_calendar_events"
 		end
 	end

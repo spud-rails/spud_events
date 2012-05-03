@@ -46,19 +46,19 @@ class Spud::Admin::CalendarEventsController < Spud::Admin::ApplicationController
   def create
     @calendar_event = SpudCalendarEvent.new(params[:spud_calendar_event])
     flash[:notice] = 'Calendar event was successfully created.' if @calendar_event.save
-    respond_with(@calendar_event, :location => spud_admin_spud_calendar_events_path)
+    respond_with(@calendar_event, :location => spud_admin_calendar_events_path)
   end
 
   def update
     @calendar_event = SpudCalendarEvent.find(params[:id])
     flash[:notice] = 'Calendar event was successfully updated.' if @calendar_event.update_attributes(params[:spud_calendar_event])
-    respond_with(@calendar_event, :location =>spud_admin_spud_calendar_events_path)
+    respond_with(@calendar_event, :location =>spud_admin_calendar_events_path)
   end
 
   def destroy
     @calendar_event = SpudCalendarEvent.find(params[:id])
     @calendar_event.destroy
-    respond_with(@calendar_event, :location => spud_admin_spud_calendar_events_path)
+    respond_with(@calendar_event, :location => spud_admin_calendar_events_path)
   end
 
 end
