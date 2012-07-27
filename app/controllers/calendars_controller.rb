@@ -1,7 +1,7 @@
 class CalendarsController < ApplicationController
-  
+
   layout Spud::Events.config.calendar_layout || 'spud/calendar'
-  
+
   def show
     if params[:month]
       year = params[:year] ? params[:year] : Time.new.year
@@ -12,16 +12,16 @@ class CalendarsController < ApplicationController
       end
     else
       @calendar_date = default_date
-    end  
+    end
     if params[:calendar] && calendar = SpudCalendar.find_by_title(params[:calendar].titleize)
-      @events = calendar.spud_calendar_events
+      @events = calendar.spud_calendar_events.where(["start_at >= ?",calendar_date]).order(:start_at)
     else
-      @events = SpudCalendarEvent.all
+      @events = SpudCalendarEvent.where(["start_at >= ?",calendar_date]).order(:start_at)
     end
     @current_calendar = params[:calendar] ? params[:calendar] : 0
-    @page_title = @calendar_date.strftime("Calendar - %B %Y")  
+    @page_title = @calendar_date.strftime("Calendar - %B %Y")
   end
-  
+
   def default_date
     Time.new
   end
