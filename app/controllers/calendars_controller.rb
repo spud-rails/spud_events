@@ -14,9 +14,9 @@ class CalendarsController < ApplicationController
       @calendar_date = default_date
     end
     if params[:calendar] && calendar = SpudCalendar.find_by_title(params[:calendar].titleize)
-      @events = calendar.spud_calendar_events.where(["start_at >= ?",calendar_date]).order(:start_at)
+      @events = calendar.spud_calendar_events.where(["start_at >= ?",@calendar_date]).order(:start_at).all
     else
-      @events = SpudCalendarEvent.where(["start_at >= ?",calendar_date]).order(:start_at)
+      @events = SpudCalendarEvent.where(["start_at >= ?",@calendar_date]).order(:start_at).all
     end
     @current_calendar = params[:calendar] ? params[:calendar] : 0
     @page_title = @calendar_date.strftime("Calendar - %B %Y")
