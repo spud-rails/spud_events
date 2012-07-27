@@ -23,6 +23,8 @@ class CalendarsController < ApplicationController
   end
 
   def default_date
-    Time.new
+    tempDate = Time.new
+    return Time.local(tempDate.year,tempDate.month)
+
   end
 end
