@@ -1,32 +1,38 @@
-<%= form_for @calendar_event, :url => path do |f| %>
+<%= form_for @calendar_event, :url => path,:html=>{:class=>"form-horizontal"} do |f| %>
   <%= error_messages_for(f.object) %>
-  <p>
-    <%= f.label :spud_calender_id, "Calendar" %>
-    <%= f.select(:spud_calendar_id, options_from_collection_for_select(SpudCalendar.all, :id, :title, @calendar_event.spud_calendar_id)) %>
-  </p>
-  <p>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </p>
-  <p>
-    <%= f.label :start_at, "Starts" %>
-    <%= f.datetime_select(:start_at, :ampm => true, :default =>  DateTime.now, :minute_step => 5)%>
-  </p>
-  <p>
-    <%= f.label :end_at, "Ends" %>
-    <%= f.datetime_select(:end_at, :ampm => true, :default =>  DateTime.now, :minute_step => 5)%>
-  </p>
-  <p>
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-  </p>
-  <p>
-    <%= f.submit "Save", :class => 'wymupdate' %>
-  </p>
-  <% if !@calendar_event.new_record? %>
-  <p>
-    <%= link_to "Delete", spud_admin_calendar_event_path(@calendar_event), :method=>:delete, :confirm=>"Are you sure you want delete this event?" %>
-  </p>
-  <% end %>
+  <div class="control-group">
+    <%= f.label :spud_calender_id, "Calendar",:class => "control-label" %>
+    <div class="controls">
+      <%= f.select(:spud_calendar_id, options_from_collection_for_select(SpudCalendar.all, :id, :title, @calendar_event.spud_calendar_id)) %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :title,:class => "control-label" %>
+    <div class="controls">
+      <%= f.text_field :title %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :start_at, "Starts",:class => "control-label" %>
+    <div class="controls">
+      <%= f.datetime_select(:start_at, :ampm => true, :default =>  DateTime.now, :minute_step => 5)%>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :end_at, "Ends",:class => "control-label" %>
+    <div class="controls">
+      <%= f.datetime_select(:end_at, :ampm => true, :default =>  DateTime.now, :minute_step => 5)%>
+    </div>
+ </div>
+  <div class="control-group">
+    <%= f.label :description,:class => "control-label" %>
+    <div class="controls">
+      <%= f.text_area :description %>
+    </div>
+  </div>
+   <div class="form-actions">
+      <%=f.submit "Create Event", :class=>"btn btn-primary"%> <%= link_to "Delete", spud_admin_calendar_event_path(@calendar_event), :method=>:delete,:class => "btn btn-danger", :confirm=>"Are you sure you want delete this event?" if !@calendar_event.new_record? %> or <%=link_to "cancel",spud_admin_courses_path,:class => "btn"%>
+  </div>
+
 <% end %>
 <br class="clear" />
