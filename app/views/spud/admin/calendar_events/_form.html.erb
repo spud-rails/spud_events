@@ -31,7 +31,7 @@
     </div>
   </div>
    <div class="form-actions">
-      <%=f.submit "Create Event", :class=>"btn btn-primary"%> <%= link_to "Delete", spud_admin_calendar_event_path(@calendar_event), :method=>:delete,:class => "btn btn-danger", :confirm=>"Are you sure you want delete this event?" if !@calendar_event.new_record? %> or <%=link_to "cancel",spud_admin_courses_path,:class => "btn"%>
+      <%=f.submit "Create Event", :class=>"btn btn-primary"%> <%= link_to "Delete", spud_admin_calendar_event_path(@calendar_event), :method=>:delete,:class => "btn btn-danger", :confirm=>"Are you sure you want delete this event?" if !@calendar_event.new_record? %> or <%=link_to "cancel",spud_admin_calendar_events_path,:class => "btn"%>
   </div>
 
 <% end %>
