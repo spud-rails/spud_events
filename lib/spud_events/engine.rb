@@ -18,8 +18,8 @@ module Spud
 			end
 			initializer :assets do |config|
 				Rails.application.config.assets.precompile += [
-          "spud/events",
-          "spud/admin/events"
+          "spud/events.*",
+          "spud/admin/events.*"
 				]
 			 end
 		 end
