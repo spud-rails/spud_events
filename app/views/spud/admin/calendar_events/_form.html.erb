@@ -15,24 +15,36 @@
   <div class="control-group">
     <%= f.label :start_at, "Starts",:class => "control-label" %>
     <div class="controls">
-      <%= f.datetime_select(:start_at, :ampm => true, :default =>  DateTime.now, :minute_step => 5)%>
+      <%= f.text_field :start_at,:value => f.object.start_at.blank? ? Time.now.strftime("%Y-%m-%d %H:%M") : f.object.start_at.strftime("%Y-%m-%d %H:%M")  , :class => 'spud_form_date_picker' %>
+      <span class="time_select">
+        <%= f.time_select :start_at, :ignore_date => true,:ampm => true%>
+      </span>
     </div>
   </div>
   <div class="control-group">
     <%= f.label :end_at, "Ends",:class => "control-label" %>
+
     <div class="controls">
-      <%= f.datetime_select(:end_at, :ampm => true, :default =>  DateTime.now, :minute_step => 5)%>
+      <%= f.text_field :end_at,:value => f.object.end_at.blank? ? Time.now.strftime("%Y-%m-%d %H:%M") : f.object.end_at.strftime("%Y-%m-%d %H:%M")  , :class => 'spud_form_date_picker' %>
+      <span class="time_select">
+        <%= f.time_select :end_at, :ignore_date => true,:ampm => true%>
+      </span>
     </div>
  </div>
   <div class="control-group">
     <%= f.label :description,:class => "control-label" %>
     <div class="controls">
-      <%= f.text_area :description %>
+      <%= f.text_area :description, :rows => 5 %>
     </div>
   </div>
    <div class="form-actions">
-      <%=f.submit "Create Event", :class=>"btn btn-primary"%> <%= link_to "Delete", spud_admin_calendar_event_path(@calendar_event), :method=>:delete,:class => "btn btn-danger", :confirm=>"Are you sure you want delete this event?" if !@calendar_event.new_record? %> or <%=link_to "cancel",spud_admin_calendar_events_path,:class => "btn"%>
+      <%=f.submit "Create Event", :class=>"btn btn-primary"%> <%= link_to "Delete", spud_admin_calendar_event_path(@calendar_event), :method=>:delete,:class => "btn btn-danger", :confirm=>"Are you sure you want delete this event?" if !@calendar_event.new_record? %> or <%=link_to "cancel",spud_admin_list_spud_calendar_events_path,:class => "btn"%>
   </div>
 
 <% end %>
 <br class="clear" />
+<script type="text/javascript">
+$(document).ready(function(){
+  spud.admin.date_picker.init();
+});
+</script>
