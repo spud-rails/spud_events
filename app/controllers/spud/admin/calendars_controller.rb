@@ -1,10 +1,10 @@
 class Spud::Admin::CalendarsController < Spud::Admin::ApplicationController
-  
-  layout 'spud/admin/events/detail'
+
+  layout 'spud/admin/detail'
   add_breadcrumb "Events", :spud_admin_list_spud_calendar_events_path
-  #add_breadcrumb "Calendars", :spud_admin_calendars_path
+
   belongs_to_spud_app :events
-  
+
   respond_to :html, :xml, :json, :js
 
   def new
@@ -48,5 +48,5 @@ class Spud::Admin::CalendarsController < Spud::Admin::ApplicationController
       format.js { render(:nothing => true) }
     end
   end
-  
+
 end

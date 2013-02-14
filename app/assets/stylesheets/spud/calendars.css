@@ -124,16 +124,13 @@ span.spud_events_calendar_date {
 .spud_events_calendar_actions {
   text-align: right;
 }
-.spud_events_admin_calendar_actions a,
-.spud_events_calendar_actions a {
-  color: gray;
-}
+
 #spud_events_admin_calendar_legend  span,
 #spud_events_calendar_legend  span {
   display: inline-block;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
-  border-radius: 3px;  
+  border-radius: 3px;
   padding: 2px 8px;
   margin: 8px 0 0 8px;
 }

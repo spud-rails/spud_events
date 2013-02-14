@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["Rakefile", "README.md"]
 
-  s.add_dependency "rails", "~> 3.2.2"
+  s.add_dependency "rails", ">= 3.2.2"
   s.add_dependency 'spud_core', ">= 0.9.0"
 
   s.add_development_dependency 'mysql2', '0.3.11'

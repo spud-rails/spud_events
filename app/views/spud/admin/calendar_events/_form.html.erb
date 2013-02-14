@@ -1,42 +1,90 @@
 <%= form_for @calendar_event, :url => path,:html=>{:class=>"form-horizontal"} do |f| %>
   <%= error_messages_for(f.object) %>
-  <div class="control-group">
-    <%= f.label :spud_calender_id, "Calendar",:class => "control-label" %>
-    <div class="controls">
-      <%= f.select(:spud_calendar_id, options_from_collection_for_select(SpudCalendar.all, :id, :title, @calendar_event.spud_calendar_id)) %>
+    <fieldset>
+    <legend>Details</legend>
+    <div class="control-group">
+      <%= f.label :spud_calender_id, "Calendar",:class => "control-label" %>
+      <div class="controls">
+        <%= f.select(:spud_calendar_id, options_from_collection_for_select(SpudCalendar.all, :id, :title, @calendar_event.spud_calendar_id)) %>
+      </div>
     </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :title,:class => "control-label" %>
-    <div class="controls">
-      <%= f.text_field :title %>
+    <div class="control-group">
+      <%= f.label :title,:class => "control-label" %>
+      <div class="controls">
+        <%= f.text_field :title %>
+      </div>
     </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :start_at, "Starts",:class => "control-label" %>
-    <div class="controls">
-      <%= f.text_field :start_at,:value => f.object.start_at.blank? ? Time.now.strftime("%Y-%m-%d %H:%M") : f.object.start_at.strftime("%Y-%m-%d %H:%M")  , :class => 'spud_form_date_picker' %>
-      <span class="time_select">
-        <%= f.time_select :start_at, :ignore_date => true,:ampm => true%>
-      </span>
+    <div class="control-group">
+      <%= f.label :description,:class => "control-label" %>
+      <div class="controls">
+        <%= f.text_area :description, :rows => 5 %>
+      </div>
     </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :end_at, "Ends",:class => "control-label" %>
+  </fieldset>
 
-    <div class="controls">
-      <%= f.text_field :end_at,:value => f.object.end_at.blank? ? Time.now.strftime("%Y-%m-%d %H:%M") : f.object.end_at.strftime("%Y-%m-%d %H:%M")  , :class => 'spud_form_date_picker' %>
-      <span class="time_select">
-        <%= f.time_select :end_at, :ignore_date => true,:ampm => true%>
-      </span>
+  <fieldset>
+    <legend>Event Time</legend>
+
+    <div class="control-group">
+      <%= f.label :start_at, "Starts",:class => "control-label" %>
+      <div class="controls">
+        <%= f.text_field :start_at,:value => f.object.start_at.blank? ? Time.now.strftime("%Y-%m-%d %H:%M") : f.object.start_at.strftime("%Y-%m-%d %H:%M")  , :class => 'spud_form_date_picker' %>
+        <span class="time_select">
+          <%= f.time_select :start_at, :ignore_date => true,:ampm => true%>
+        </span>
+      </div>
     </div>
- </div>
-  <div class="control-group">
-    <%= f.label :description,:class => "control-label" %>
-    <div class="controls">
-      <%= f.text_area :description, :rows => 5 %>
+    <div class="control-group">
+      <%= f.label :end_at, "Ends",:class => "control-label" %>
+
+      <div class="controls">
+        <%= f.text_field :end_at,:value => f.object.end_at.blank? ? Time.now.strftime("%Y-%m-%d %H:%M") : f.object.end_at.strftime("%Y-%m-%d %H:%M")  , :class => 'spud_form_date_picker' %>
+        <span class="time_select">
+          <%= f.time_select :end_at, :ignore_date => true,:ampm => true%>
+        </span>
+      </div>
+   </div>
+  </fieldset>
+  <fieldset>
+    <legend>Location</legend>
+    <div class="control-group">
+      <%= f.label :location,:class => "control-label" %>
+      <div class="controls">
+        <%= f.text_field :location %>
+      </div>
     </div>
-  </div>
+    <div class="control-group">
+      <%= f.label :address,:class => "control-label" %>
+      <div class="controls">
+        <%= f.text_field :address %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :address_2,:class => "control-label" %>
+      <div class="controls">
+        <%= f.text_field :address_2 %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :city,:class => "control-label" %>
+      <div class="controls">
+        <%= f.text_field :city %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :state,:class => "control-label" %>
+      <div class="controls">
+        <%= f.text_field :state %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :zip,:class => "control-label" %>
+      <div class="controls">
+        <%= f.text_field :zip %>
+      </div>
+    </div>
+  </fieldset>
+
    <div class="form-actions">
       <%=f.submit "Create Event", :class=>"btn btn-primary"%> <%= link_to "Delete", spud_admin_calendar_event_path(@calendar_event), :method=>:delete,:class => "btn btn-danger", :confirm=>"Are you sure you want delete this event?" if !@calendar_event.new_record? %> or <%=link_to "cancel",spud_admin_list_spud_calendar_events_path,:class => "btn"%>
   </div>

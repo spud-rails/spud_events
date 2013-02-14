@@ -1,5 +1,5 @@
 <li id="spud_events_admin_calendar_legend_<%= calendar.id %>" class="spud_events_admin_calendar_legend_item">
-  <%= content_tag :span, calendar.title, :style => "background-color: \##{calendar.color}"%>
+  <%= content_tag :span, calendar.title, :style => "background-color: \##{calendar.color};color:\##{calendar_fore_color(calendar.color)}"%>
   <div class="spud_events_admin_calendar_actions">
     <%= link_to 'edit', edit_spud_admin_calendar_path(calendar), :class => "btn btn-mini" %>
     <%= link_to 'delete', spud_admin_calendar_path(calendar), :remote => true, :confirm => "This action can't be undone. Would you like to remove the calendar \"#{calendar.title}\"?", :method => :delete, :class => 'js-spud-calendar-delete-action btn btn-mini btn-danger' %>

@@ -17,6 +17,9 @@ module Spud
 				end
 			end
 			initializer :assets do |config|
+        Spud::Core.append_admin_javascripts('spud/admin/events')
+        Spud::Core.append_admin_stylesheets('spud/admin/events')
+
 				Rails.application.config.assets.precompile += [
           "spud/events.*",
           "spud/admin/events.*"

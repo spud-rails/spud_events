@@ -1,15 +1,20 @@
-<%= form_for @calendar, :url => (@calendar.new_record? ? spud_admin_calendars_path : spud_admin_calendar_path(@calendar)) do |f| %>
+<%= form_for @calendar, :url => (@calendar.new_record? ? spud_admin_calendars_path : spud_admin_calendar_path(@calendar)),:html=>{:class=>"form-horizontal"}  do |f| %>
     <%= error_messages_for(f.object) %>
-    <p>
-        <%= f.label :title %>
+    <div class="control-group">
+      <%= f.label :title,:class => "control-label" %>
+      <div class="controls">
         <%= f.text_field :title %>
-    </p>
-    <p>
-        <%= f.label :color %>
+      </div>
+    </div>
+        <div class="control-group">
+      <%= f.label :color,:class => "control-label" %>
+      <div class="controls">
         <%= f.hidden_field :color %>
         <div class="spud_events_admin_color_picker"></div>
-    </p>
-    <p>
-        <%= f.submit "Save" %>
-    </p>
+      </div>
+    </div>
+ <div class="form-actions">
+  <%=f.submit "Save", :class=>"btn btn-primary"%> or <%=link_to "cancel",spud_admin_list_spud_calendar_events_path,:class => "btn"%>
+  </div>
+
 <% end %>

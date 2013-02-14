@@ -7,9 +7,14 @@
 <div id="spud_events_admin_calendar">
   <%= render :partial => 'calendar' %>
 </div>
+
 <ul id="spud_events_admin_calendar_legend">
     <%= render :partial => 'spud/admin/calendars/calendar_legend', :collection => @calendars, :as => :calendar %>
-    <li><%= link_to("New Calendar", new_spud_admin_calendar_path, :class => "btn") %></li>
+    <li>
+      <%= link_to("New Calendar", new_spud_admin_calendar_path, :class => "btn btn-primary btn-small pull-right") %>
+      <br style="clear:right;"/>
+    </li>
 </ul>
+
 
 <%end%>

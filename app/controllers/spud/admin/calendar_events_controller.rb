@@ -1,12 +1,12 @@
 class Spud::Admin::CalendarEventsController < Spud::Admin::ApplicationController
-  
-  layout 'spud/admin/events/detail'
+
+  layout 'spud/admin/detail'
   add_breadcrumb "Events", :spud_admin_list_spud_calendar_events_path
   belongs_to_spud_app :events
-  
+
   respond_to :html, :xml, :json
   respond_to :js, :only => [:index, ]
-  
+
   def index
     if params[:month]
       year = params[:year] ? params[:year] : Time.new.year
@@ -25,7 +25,7 @@ class Spud::Admin::CalendarEventsController < Spud::Admin::ApplicationController
       @calendar_events = SpudCalendarEvent
     end
     @calendar_events = @calendar_events.in_month_of(@calendar_date).order('spud_calendar_events.start_at ASC').all
-    
+
     @calendars = SpudCalendar.all
     @current_calendar = params[:spud_calendar] ? params[:spud_calendar] : 0
 
