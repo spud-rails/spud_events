@@ -22,17 +22,14 @@ Spud.Admin.Events = new function(){
       $colorPickers.ColorPicker({
         color:  $calendarColor.val(),
         onShow: function (colpkr) {
-          console.log("show")
-  		    $(colpkr).fadeIn(500);
-  		    return false;
+          $(colpkr).fadeIn(500);
+          return false;
         },
         onHide: function (colpkr) {
-          console.log("hide")
           $(colpkr).fadeOut(500);
-  		    return false;
+          return false;
         },
         onChange: function (hsb, hex, rgb) {
-          console.log("change")
 
           $colorPickers.css('backgroundColor', '#' + hex);
           $calendarColor.attr('value', hex);
@@ -43,9 +40,9 @@ Spud.Admin.Events = new function(){
 
   self.attachCalendarDeleteFX = function() {
     $(document).on('ajax:succes','.js-spud-calendar-delete-action', function() {
-      $(this).closest('.spud_events_admin_calendar_legend_item').fadeOut(500, function(){ $(this).remove() });
+      $(this).closest('.spud_events_admin_calendar_legend_item').fadeOut(500, function(){ $(this).remove(); });
     });
-  }
+  };
 };
 
 $(function() {
