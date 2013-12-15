@@ -1,5 +1,5 @@
-<p><%= link_to_next_calendar_month(@calendar_date, :controller => 'spud/admin/calendar_events', :class => "btn") %></p>
-<p><%= link_to_previous_calendar_month(@calendar_date, :controller => 'spud/admin/calendar_events', :class => "btn") %></p>
+<p><%= link_to_next_calendar_month(@calendar_date, :class => "btn") %></p>
+<p><%= link_to_previous_calendar_month(@calendar_date, :class => "btn") %></p>
 
 <%= build_calendar_for @calendar_events, :year => @calendar_date.year, :month => @calendar_date.month do |t| %>
   <%= raw t.head('S', 'M', 'T', 'W', 'T', 'F', 'S') %>
