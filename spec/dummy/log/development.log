@@ -1,0 +1,22 @@
+Connecting to database specified by database.yml
+  [1m[36m (1.4ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateSpudInquiries (20120117133405)
+Migrating to CreateSpudInquiryFields (20120117133412)
+Migrating to CreateSpudInquiryForms (20120121194439)
+Migrating to CreateSpudInquiryFormFields (20120121194447)
+Migrating to AddFieldOrderToSpudInquiryFormFields (20120122173829)
+Migrating to AddSpudInquiryFormIdToSpudInquiries (20120126132407)
+Migrating to AddRecipientsToSpudInquiryForms (20120126132522)
+Migrating to AddUrlNameToSpudInquiryForms (20120127023335)
+Migrating to ChangeInquiryFormFieldsColumn (20120413124900)
+Migrating to CreateSpudAdminPermissions (20120610131537)
+Migrating to CreateSpudUsers (20120610131538)
+Migrating to AddTimeZoneToSpudUser (20120610131539)
+Migrating to AddScopeToSpudAdminPermissions (20120610131540)
+Migrating to CreateSpudUserSettings (20120610131541)
+Migrating to AddThankYouContentToSpudInquiryForm (20121228145215)
+  [1m[35m (26.8ms)[0m  ALTER TABLE `spud_inquiry_forms` ADD `thank_you_content` text
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20121228145215')[0m
+  [1m[35m (0.3ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml

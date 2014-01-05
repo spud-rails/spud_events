@@ -1,0 +1,9 @@
+development:
+  adapter: mysql2
+  database: spud_events_development
+  username: root
+
+test:
+  adapter: mysql2
+  database: spud_events_test
+  username: root
