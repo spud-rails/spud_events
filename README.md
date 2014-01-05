@@ -8,8 +8,7 @@ Installation/Usage
 
 1. Add the following to your Gemfile
 
-        gem 'spud_core'
-        gem 'spud_events', :git => "git://github.com/spud-rails/spud_events.git"
+        gem 'spud_events'
 
 2. Run ```bundle install```
 3. Copy the database migrations in to your rails project
@@ -29,7 +28,7 @@ Configruations
         end
 
 * Override the default calendar views by placing the corresponding views in the ```calendars``` and ```calendar_events``` view folders.
-* Include the default calendar CSS by adding the following to your ```application.css``` file 
+* Include the default calendar CSS by adding the following to your ```application.css``` file
 
         /*
         ...
@@ -42,7 +41,7 @@ Testing
 Spud uses RSpec for testing. Get the tests running with a few short commands:
 
 1. Create and migrate the databases:
-   
+
         rake db:create
         rake db:migrate
 
@@ -55,4 +54,4 @@ Spud uses RSpec for testing. Get the tests running with a few short commands:
         rspec spec
 
 After the tests have completed the current code coverage stats is available by opening ```/coverage/index.html``` in a browser.
-    
+
