@@ -5,6 +5,8 @@ class Spud::Admin::CalendarsController < Spud::Admin::ApplicationController
 
   belongs_to_spud_app :events
 
+  before_filter :load_calendar, :only => [:show,:edit,:update,:destroy]
+
   respond_to :html, :xml, :json, :js
 
   def new
@@ -14,7 +16,7 @@ class Spud::Admin::CalendarsController < Spud::Admin::ApplicationController
   end
 
   def create
-    @calendar = SpudCalendar.new(params[:spud_calendar])
+    @calendar = SpudCalendar.new(calendar_params)
     if @calendar.save
       redirect_to spud_admin_list_spud_calendar_events_path
     else
@@ -29,8 +31,7 @@ class Spud::Admin::CalendarsController < Spud::Admin::ApplicationController
   end
 
   def update
-    @calendar = SpudCalendar.find(params[:id])
-    if @calendar.update_attributes(params[:spud_calendar])
+    if @calendar.update_attributes(calendar_params)
       flash[:notice] = 'Calendar was successfully updated.'
       redirect_to spud_admin_list_spud_calendar_events_path
     else
@@ -39,14 +40,25 @@ class Spud::Admin::CalendarsController < Spud::Admin::ApplicationController
   end
 
   def destroy
-    @calendar = SpudCalendar.find(params[:id])
-    @calendar.spud_calendar_events.each do |event|
-      event.update_attribute(:spud_calendar_id, 0)
-    end
     @calendar.destroy
     respond_with(@calendar) do |format|
       format.js { render(:nothing => true) }
     end
+  end
+
+private
+
+  def load_calendar
+    @calendar = SpudCalendar.where(:id => params[:id]).first
+    if @calendar.blank?
+      flash[:error] = "Calendar not found!"
+      redirect_to spud_admin_list_spud_calendar_events_path and return false
+    end
+    return true
+  end
+
+  def calendar_params
+    params.require(:spud_calendar).permit(:title, :color)
   end
 
 end
